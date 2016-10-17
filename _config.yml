@@ -27,3 +27,6 @@ github_username:  vuonghv
 # Build settings
 markdown: kramdown
 theme: minima
+
+# Enabling Google Analytics
+google_analytics: UA-85725984-1
