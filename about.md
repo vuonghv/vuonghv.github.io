@@ -4,12 +4,15 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Chào bạn đến với blog của tôi,
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jekyll" %} /
-[minima](https://github.com/jekyll/minima)
+Tôi là Vương. Tôi quan tâm đến _cryptography_, _security_, _unix* things_, ...
+và một số thứ linh tinh khác. Lúc rảnh rỗi, tôi thường xem phim, đọc sách,
+lướt các trang chế ảnh và là BIG fan of COFFEE.
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+Tôi viết blog này nhằm chia sẻ kiến thức và kinh nghiệm mà tôi tích lũy được, cũng như
+nâng cao trình độ viết lách của mình.
+
+Hy vọng blog này sẽ có những bài viết tạm gọi là đọc được. :)
+
+\_EOF\_
