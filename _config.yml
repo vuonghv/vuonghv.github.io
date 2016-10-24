@@ -25,6 +25,7 @@ github_username:  vuonghv
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 theme: minima
 
 # Enabling Google Analytics
