@@ -34,3 +34,12 @@ google_analytics: UA-85725984-1
 # Enabling comments (via Disqus)
 disqus:
   shortname: vuonghv
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      category: "blog"
+      permalink: /:categories/:title.html
