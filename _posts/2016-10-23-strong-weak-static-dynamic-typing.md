@@ -11,6 +11,10 @@ niệm như `strong/weak` typing, `static/dynamic` typing. Bạn có bao giờ t
 chúng có nghĩa là gì? và các ngôn ngữ thông dụng như Java, C/C++, Python,
 Javascript, ... là strong hay weak typing? static hay dynamic typing?
 
+Hơn nữa, nhiều người vẫn đang nhầm tưởng rằng _static_ đồng nghĩa với _strong_
+typing và _dynamic_ đồng nghĩa với _weak_ typing. Vậy bạn hãy cùng tôi dạo qua
+bài viết này để có một cái nhìn cụ thể hơn.
+
 ## Strong vs Weak typing
 
 Hiện tại thì người ta vẫn chưa thống nhất một _định nghĩa chuẩn_ thế nào là một
@@ -21,17 +25,19 @@ nhiều người chấp nhận và theo tôi thấy thì cũng ngắn gọn và 
 > Strong typing means that the type of a value doesn't **suddenly** change.
 
 Theo đó, các ngôn ngữ **strong typing** đảm bảo rằng kiểu (types) của một object
-không thay đổi một cách bất ngờ, không tường minh. Hay nói cách khác, ta phải
-chỉ rõ tường minh khi muốn chuyển đổi kiểu của một object.
+không thay đổi một cách đột ngột, không tường minh. Hay nói cách khác, ta phải
+chỉ rõ thao tác (thông qua lời gọi hàm, ép kiểu, ...) khi muốn chuyển đổi kiểu
+của một object.
 
-Những ngôn ngữ không đáp ứng yêu cầu trên là **weak typing**. Nói nhiều quá, lấy
-một số ví dụ cho dễ hiểu nào:
+Những ngôn ngữ không đáp ứng yêu cầu trên là **weak typing**.
+
+_Nói nhiều quá, lấy một số ví dụ cho dễ hiểu nào?_
 
 Xét đoạn code PHP sau:
 
 ```php?start_inline=1
-$a = "3" + "5"; // $a == 8
-$b = 101 . " dogs"; // $b == "101 dogs"
+$a = "3" + "5"; // $a === 8
+$b = 101 . " dogs"; // $b === "101 dogs"
 ```
 
 Ta thấy ở câu lệnh trên, kiểu của string `"3"` và `"5"` đã tự động chuyển thành
@@ -93,7 +99,7 @@ Nếu ta đã khai báo một biến có kiểu nguyên, ta sẽ không thể g�
 kiểu khác tới nó.
 
 Trái lại, với **dynamic typing**, mỗi biến chỉ đơn giản là một cái nhãn (label)
-được liên kết với một object. Mỗi object sẽ có kiển riêng của nó (ví dụ trong
+được liên kết với một object. Mỗi object sẽ có kiểu riêng của nó (ví dụ trong
 Python, ta có kiểu `int, str, list, dict, ...`) nhưng bản thân biến thì không.
 Và kiểu của biến hay nói chính xác hơn là kiểu của object liên kết với biến được
 kiểm tra lúc **runtime**.
@@ -117,16 +123,17 @@ khó đọc và khó debug.
 
 _Nghe cũng thú vị đấy, nói nghe ưu nhược điểm của từng loại xem nào?_
 
-Dưới đây là một vài tiêu chí so sánh ưu nhược điểm của static và dynamic typing:
+Dưới đây là so sánh ưu nhược điểm của static với dynamic typing theo một số tiêu
+chí phổ biến:
 
 * **Ngắn gọn**: Với dynamic typing, code trông sẽ ngắn gọn hơn bởi vì nó bỏ đi
 các khai báo kiểu cho biến, tham số cũng như giá trị trả về của hàm.
 
 * **Tài liệu**: Với tiêu chí này thì static typing lại chiếm ưu thế hơn, khi
 khai báo kiểu cho biến, tham số,... bản thân nó cũng đã phục vụ như bản đặc tả
-tài liệu. Hơn nữa static typing giúp tính năng _intelligent completion_ trong
-IDE làm việc tốt hơn. Gần đây Python (version 3.5) có [type hints][4] và
-Microsoft đẻ ra thằng [typescript][5] cũng có một phần vì lý do này.
+tài liệu. Hơn nữa static typing giúp tính năng intelligent completion trong IDE
+làm việc tốt hơn. Gần đây Python (version 3.5) có [type hints][4] và Microsoft
+đẻ ra thằng [typescript][5] cũng có một phần vì lý do này.
 
 * **Tính đúng đắn**: Trong một ngôn ngữ static typing, những lỗi về kiểu (type
 errors) có thể được phát hiện tại thời điểm compile vì vậy chương trình sẽ an
@@ -138,7 +145,24 @@ kiểu lúc runtime nên hiệu năng sẽ giảm đi đáng kể. Trái lại, 
 phép compiler thực hiện một số tối ưu lúc biên dịch chương trình do kiểu của
 biến đã được khai báo trước.
 
-Hy vọng bài viết cung cấp cho bạn những thông tin hữu ích.
+## Kết luận
+
+Phần này chỉ đơn giản là tóm tắt lại những gì được nói ở trên.
+
+Strong typing đảm bảo rằng kiểu của một object không tự động thay đổi, hay nói
+cách khác là không thay đổi một cách ngầm định. Trong khi đó, với static typing,
+một biến chỉ có một kiểu duy nhất và phải được khai báo trước khi sử dụng, kiểu
+của biến được kiểm tra tại thời điểm biên dịch chương trình.
+
+Với weak typing, kiểu của một object có thể tự động thay đổi (cái này Tây họ gọi
+là "implicit conversions"). Trong khi đó, với các ngôn ngữ dynamic typing, ta
+có thể gán các object có kiểu khác nhau cho cùng một biến và kiểu của object
+gắn liền với biến được kiểm tra lúc chạy chương trình.
+
+Qua bài viết, hi vọng bạn đã có thêm một số kiến thức cũng như biết được sự khác
+nhau giữa các hệ thống kiểu (typed system) trong ngôn ngữ lập trình.
+
+Rất mong nhận được sự góp ý cũng như thảo luận từ các bạn!
 
 Nguồn tham khảo:
 
