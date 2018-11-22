@@ -17,10 +17,10 @@ title: Happy Coding ¯\_(ツ)_/¯
 author: Vuong Hoang
 email: vuonghv.cs@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Built on jekyll with a lot of _text_ and _coffee_.
+  Built on Jekyll with a lot of _text_ and _coffee_.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://vuonghv.github.io" # the base hostname & protocol for your site
-twitter_username: vuongmax
+# twitter_username: vuongmax
 github_username:  vuonghv
 
 # Build settings
