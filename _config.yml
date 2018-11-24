@@ -43,3 +43,6 @@ defaults:
     values:
       category: "blog"
       permalink: /:categories/:title.html
+
+plugins:
+  - jemoji
