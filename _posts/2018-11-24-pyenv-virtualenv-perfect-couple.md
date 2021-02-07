@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Pyenv :hearts: Virtualenv: Cặp đôi hoàn hảo"
+title: "Pyenv with Virtualenv: Cặp đôi hoàn hảo"
 date:   2018-11-24 14:13:13 +0700
 category: blog
 tags: ["python", "tools"]
